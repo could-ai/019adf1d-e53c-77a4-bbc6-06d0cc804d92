@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:couldai_user_app/ai_tutor_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     Center(child: Text('Home - Your personalized dashboard')),
-    Center(child: Text('AI Tutor - Ask your doubts here')),
+    AiTutorScreen(), // Replaced placeholder with actual screen
     Center(child: Text('Tests - Practice and mock tests')),
     Center(child: Text('Profile - Your account and settings')),
   ];
@@ -30,6 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('VMEDU-JEENEET', style: Theme.of(context).textTheme.titleLarge),
         backgroundColor: const Color(0xFF0A0E21),
         elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.notifications_none),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
